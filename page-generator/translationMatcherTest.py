@@ -64,4 +64,14 @@ class TranslationMatcherTest(unittest.TestCase):
 
     def testVerbRootMatch2(self):
         word = u'kılanlara'
-        match = self.translationMatcher.getMatchForWord
+        match = self.translationMatcher.getMatchForWord(word)
+
+        assert match.start==0, match.start
+        assert match.end==3, match.end
+        assert match.root==u'kılmak', match.root
+        assert match.translation==u'etmek, eylemek, yapmak', match.translation
+
+
+
+if __name__ == "__main__":
+    unittest.main()
